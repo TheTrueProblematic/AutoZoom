@@ -158,8 +158,14 @@ Else
 
 Set IExp = CreateObject("InternetExplorer.Application")
 Set WSHShell = WScript.CreateObject("WScript.Shell")
+url = "https://zoom.us/j/"&use
 IExp.Visible = False
-IExp.navigate "https://zoom.us/j/"+use
+IExp.navigate url
+
+For Each w In CreateObject("Shell.Application").Windows
+    w.Quit()
+Next
+
 
 End If
 

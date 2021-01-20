@@ -1,18 +1,18 @@
-today = Date
-snd = "1/1/3000"
-week = Weekday(Date)
-hr = Hour(Time)
-min = Minute(Time)
-tm = hr&":"&min
-nicetime = TimeValue(tm)
-
-
-' ft = tm&":"&weektime
-
-ssnd = DateDiff("d",today,snd)
-
-Dim weektime
-weektime = Array("0:0:0:1","0:0:1:0","0:0:1:1","0:1:0:0","0:1:0:1","0:1:1:0","0:1:1:1","1:0:0:0","1:0:0:1","1:0:1:0","1:0:1:1","1:1:0:0","1:1:0:1","1:1:1:0","1:1:1:1","0:0:0:0")
+' today = Date
+' snd = "1/1/3000"
+' week = Weekday(Date)
+' hr = Hour(Time)
+' min = Minute(Time)
+' tm = hr&":"&min
+' nicetime = TimeValue(tm)
+'
+'
+' ' ft = tm&":"&weektime
+'
+' ssnd = DateDiff("d",today,snd)
+'
+' Dim weektime
+' weektime = Array("0:0:0:1","0:0:1:0","0:0:1:1","0:1:0:0","0:1:0:1","0:1:1:0","0:1:1:1","1:0:0:0","1:0:0:1","1:0:1:0","1:0:1:1","1:1:0:0","1:1:0:1","1:1:1:0","1:1:1:1","0:0:0:0")
 ' Dim strHTML
 ' Dim IE
 
@@ -46,4 +46,14 @@ weektime = Array("0:0:0:1","0:0:1:0","0:0:1:1","0:1:0:0","0:1:0:1","0:1:1:0","0:
 
 ' ie.Document.Body.InnerHTML = strHTML
 
-MsgBox weektime(0)
+' MsgBox weektime(0)
+use = 1
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+url = "https://zoom.us/j/"&use
+IExp.Visible = False
+IExp.navigate url
+
+For Each w In CreateObject("Shell.Application").Windows
+    w.Quit()
+Next
