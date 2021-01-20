@@ -1,1 +1,1 @@
-CreateObject("WScript.Shell").Run("Files\Test.vbs")
+CreateObject("WScript.Shell").Run("Files\Start.vbs")
