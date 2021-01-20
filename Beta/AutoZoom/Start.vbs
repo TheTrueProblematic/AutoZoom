@@ -1,7 +1,7 @@
 c = 0
 introComplete = False
 
-Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("Files\Vars.txt",1)
+Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("AutoZoom\Vars.txt",1)
 Dim strLine
 do while not objFileToRead.AtEndOfStream
      strLine = objFileToRead.ReadLine()
@@ -26,7 +26,7 @@ Set objFileToRead = Nothing
 
 
 If introComplete = True Then
-  CreateObject("WScript.Shell").Run("Files\Clock.vbs")
+  CreateObject("WScript.Shell").Run("AutoZoom\Clock.vbs")
 Else
-  CreateObject("WScript.Shell").Run("Files\Intro.vbs")
+  CreateObject("WScript.Shell").Run("AutoZoom\Intro.vbs")
 End If

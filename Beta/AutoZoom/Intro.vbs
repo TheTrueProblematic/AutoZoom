@@ -20,10 +20,10 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "Files\Vars.txt "
+x = "AutoZoom\Vars.txt "
 y = "zoom"&i&" "
 z = cl
-shell.Run "Files\Replace.vbs " & x & y & z
+shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
 
 'Time Prompts
@@ -62,10 +62,10 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "Files\Vars.txt "
+x = "AutoZoom\Vars.txt "
 y = "time"&i&" "
 z = tm
-shell.Run "Files\Replace.vbs " & x & y & z
+shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
 'End of loop
 Next
@@ -77,17 +77,17 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "Files\Vars.txt "
+x = "AutoZoom\Vars.txt "
 y = "end "
 z = snd
-shell.Run "Files\Replace.vbs " & x & y & z
+shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
 Set shell = CreateObject("WScript.Shell")
-x = "Files\Vars.txt "
+x = "AutoZoom\Vars.txt "
 y = "false "
 z = "true"
-shell.Run "Files\Replace.vbs " & x & y & z
+shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
 Set shell = CreateObject("WScript.Shell")
 'shell.CurrentDirectory = "C:\Users\js\Desktop\createIndex"
-shell.Run "Files\Config.bat"
+shell.Run "AutoZoom\Config.bat"

@@ -59,7 +59,7 @@ Dim times = Array("","","","","","","","","","")
 ' time8 = ""
 ' time9 = ""
 nnd = ""
-Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("Files\Vars.txt",1)
+Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("AutoZoom\Vars.txt",1)
 Dim strLine
 do while not objFileToRead.AtEndOfStream
      strLine = objFileToRead.ReadLine()
