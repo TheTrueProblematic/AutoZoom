@@ -36,8 +36,10 @@ End If
 
 c = 0
 c = c-1
-Dim zooms = Array("","","","","","","","","","")
-Dim times = Array("","","","","","","","","","")
+Dim zooms
+zooms = Array("","","","","","","","","","")
+Dim times
+times = Array("","","","","","","","","","")
 ' zoom0 = ""
 ' zoom1 = ""
 ' zoom3 = ""
@@ -129,26 +131,26 @@ For i = 0 to 15
 wt = weektime(i)
 ft = tm&":"&wt
 
-If time(0) = ft Then
-use = zoom(0)
-ElseIf time(1) = ft Then
-use = zoom(1)
-ElseIf time(2) = ft Then
-use = zoom(2)
-ElseIf time(3) = ft Then
-use = zoom(3)
-ElseIf time(4) = ft Then
-use = zoom(4)
-ElseIf time(5) = ft Then
-use = zoom(5)
-ElseIf time(6) = ft Then
-use = zoom(6)
-ElseIf time(7) = ft Then
-use = zoom(7)
-ElseIf time(8) = ft Then
-use = zoom(8)
-ElseIf time(9) = ft Then
-use = zoom(9)
+If times(0) = ft Then
+use = zooms(0)
+ElseIf times(1) = ft Then
+use = zooms(1)
+ElseIf times(2) = ft Then
+use = zooms(2)
+ElseIf times(3) = ft Then
+use = zooms(3)
+ElseIf times(4) = ft Then
+use = zooms(4)
+ElseIf times(5) = ft Then
+use = zooms(5)
+ElseIf times(6) = ft Then
+use = zooms(6)
+ElseIf times(7) = ft Then
+use = zooms(7)
+ElseIf times(8) = ft Then
+use = zooms(8)
+ElseIf times(9) = ft Then
+use = zooms(9)
 Else
 End If
 
