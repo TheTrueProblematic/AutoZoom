@@ -60,3 +60,7 @@ x = "Vars.txt "
 y = "false "
 z = "true"
 shell.Run "Replace.vbs " & x & y & z
+
+Set shell = CreateObject("WScript.Shell")
+'shell.CurrentDirectory = "C:\Users\js\Desktop\createIndex"
+shell.Run "Config.bat"
