@@ -34,7 +34,7 @@ If tm="" Then
 Else
 End If
 
-'Set shell = CreateObject("WScript.Shell")
+Set shell = CreateObject("WScript.Shell")
 x = "Vars.txt "
 y = "time"&i&" "
 z = tm
@@ -53,4 +53,10 @@ Set shell = CreateObject("WScript.Shell")
 x = "Vars.txt "
 y = "end "
 z = snd
+shell.Run "Replace.vbs " & x & y & z
+
+Set shell = CreateObject("WScript.Shell")
+x = "Vars.txt "
+y = "false "
+z = "true"
 shell.Run "Replace.vbs " & x & y & z
