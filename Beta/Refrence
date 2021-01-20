@@ -1,0 +1,38 @@
+strAnswer = InputBox(Please)
+
+If strAnswer="fuck" Then
+
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+IExp.Visible = False
+IExp.navigate "http://www.infinitelooper.com/?v=kfchvCyHmsc&p=n"
+
+ElseIf strAnswer="squid" Then
+
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+IExp.Visible = False
+IExp.navigate "http://www.infinitelooper.com/?v=dlZbUX3LXvs&p=n"
+
+ElseIf strAnswer="allstar" Then
+
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+IExp.Visible = False
+IExp.navigate "http://www.infinitelooper.com/?v=5ZYgIrqELFw&p=n"
+
+ElseIf strAnswer="hobbit" Then
+
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+IExp.Visible = False
+IExp.navigate "http://www.infinitelooper.com/?v=uE-1RPDqJAY&p=n"
+
+Else
+
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+IExp.Visible = False
+IExp.navigate strAnswer
+
+End If
