@@ -27,7 +27,34 @@ shell.Run "Replace.vbs " & x & y & z
 
 
 'Time Prompts
-tm = ""               'Prompt User For Time and Day of Week
+tim = InputBox("What time is class "&ii,"ZoomLauncher","Use Military Time (Example 13:45)")
+Dim dow
+dow = Array("Monday","Tuesday","Wednessday","Thursday","Friday")
+build = ""
+For i = 0 to 4
+tday = dow(i)
+intAnswer = _
+    MsgBox("Do you have class on "&tday&"?", _
+        vbYesNo, "ZoomLauncher")
+If intAnswer = vbYes Then
+    ' Msgbox "You answered yes."
+    If i<4 Then
+      build = build&"1:"
+    Else
+      build = build&"1"
+    End If
+Else
+    ' Msgbox "You answered no."
+    If i<4 Then
+      build = build&"0:"
+    Else
+      build = build&"0"
+    End If
+End If
+
+Next
+
+tm = tim&":"&build
 
 If tm="" Then
   Wscript.Quit
