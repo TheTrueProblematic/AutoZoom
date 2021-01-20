@@ -26,7 +26,7 @@ Set objFileToRead = Nothing
 
 
 If introComplete = True Then
-  CreateObject("WScript.Shell").Run("Clock.vbs")
+  CreateObject("WScript.Shell").Run("Start.vbs")
 Else
-  'CreateObject("WScript.Shell").Run("Intro.vbs")
+  CreateObject("WScript.Shell").Run("Intro.vbs")
 End If
