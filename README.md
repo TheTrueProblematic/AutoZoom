@@ -1,3 +1,3 @@
 # ZoomLauncher
 
-dont look at me yet, I'm shy!
+Don't look at me yet, I'm shy!
