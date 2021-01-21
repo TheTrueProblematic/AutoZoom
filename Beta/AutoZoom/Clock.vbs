@@ -28,12 +28,6 @@ End If
 
 
 
-'msgbox nicetime
-
-
-
-
-
 c = 0
 c = c-1
 Dim zooms
