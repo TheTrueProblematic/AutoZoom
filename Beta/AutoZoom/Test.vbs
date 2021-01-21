@@ -1,45 +1,38 @@
-code = "049642"
-use = "88497341915"
+' cl = InputBox("Zoom code "&vbCrLf&vbCrLf&"for Class "&ii,version,"Type Here")
 
 
-If use = "" Then
-Else
+' version = "AutoZoom 0.2.0"
+' iAnswer = _
+'     MsgBox("Welcome to "&version&"!"&vbCrLf&vbCrLf&"Do you want to settup now?", _
+'         vbYesNo, version)
+' If iAnswer = vbYes Then
+'     ' Msgbox "You answered yes."
+' Else
+'     Msgbox "Thats ok!"&vbCrLf&vbCrLf&"Just run the same file you just did when youre ready to settup!"
+'     Wscript.Quit
+' End If
+
+use = 1
 Set IExp = CreateObject("InternetExplorer.Application")
 Set WSHShell = WScript.CreateObject("WScript.Shell")
 url = "https://zoom.us/j/"&use
 IExp.Visible = False
 IExp.navigate url
-' WScript.Sleep 1000
-' For Each w In CreateObject("Shell.Application").Windows
-'     w.Quit()
-' Next
-End If
 
-If code = "" Then
-Else
-WScript.Sleep 2000
-set wShell = createObject("wscript.shell")
-wShell.sendKeys code&"{ENTER}"
-End If
+WScript.Sleep 1000
 
+Set objWMIService = GetObject("winmgmts:" _
+    & "{impersonationLevel=impersonate}!\\.\root\cimv2")
 
+Set colProcessList = objWMIService.ExecQuery _
+    ("Select * from Win32_Process Where Name = 'iexplore.exe'")
 
+Set oShell = CreateObject("WScript.Shell")
+For Each objProcess in colProcessList
+    oShell.Run "taskkill /im iexplore.exe", , True
+Next
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+' IExp.Terminate
 
 
 

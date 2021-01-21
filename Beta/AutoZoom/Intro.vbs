@@ -1,5 +1,13 @@
 version = "AutoZoom 0.2.0"
-
+iAnswer = _
+    MsgBox("Welcome to "&version&"!"&vbCrLf&vbCrLf&"Do you want to settup now?", _
+        vbYesNo, version)
+If iAnswer = vbYes Then
+    ' Msgbox "You answered yes."
+Else
+    Msgbox "Thats ok!"&vbCrLf&vbCrLf&"Just run the same file you just did when youre ready to settup!"
+    Wscript.Quit
+End If
 
 n = InputBox("How many Zoom classes?",version,"Type Here")
 
@@ -28,9 +36,33 @@ y = "zoom"&i&" "
 z = cl
 shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
+endtim = ""
+' delay = ""
 
 'Time Prompts
-tim = InputBox("What time is class "&ii,version,"Use Military Time (Example 13:45)")
+'Class start prompt
+tim = InputBox("What time does class "&ii&" start?",version,"Use Military Time (Example 13:45)")
+'Class ends prompts
+iAnswer = _
+    MsgBox("Do you want class "&ii&" to automatically exit?", _
+        vbYesNo, version)
+If iAnswer = vbYes Then
+    ' Msgbox "You answered yes."
+    endtim = InputBox("What time do you want to disconnect from class "&ii&"?",version,"Use Military Time (Example 13:45)")
+
+    Set shell = CreateObject("WScript.Shell")
+    x = "AutoZoom\Vars.txt "
+    y = "endtim"&i&" "
+    z = endtim
+    shell.Run "AutoZoom\Replace.vbs " & x & y & z
+    ' delay = InputBox("How long after class "&ii&" ends do you want it to disconnect?"&vbCrLf&vbCrLf&"(Enter 0 for no delay)",version,"Enter your answer in minutes")
+Else
+    ' Msgbox "You answered no."
+
+End If
+
+
+
 Dim dow
 dow = Array("Monday","Tuesday","Wednessday","Thursday","Friday")
 build = ""
