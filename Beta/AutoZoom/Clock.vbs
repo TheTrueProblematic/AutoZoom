@@ -214,5 +214,5 @@ wShell.sendKeys code&"{ENTER}"
 End If
 
 
-WScript.Sleep 60000
+WScript.Sleep 30000
 CreateObject("WScript.Shell").Run WScript.ScriptFullName
