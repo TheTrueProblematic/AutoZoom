@@ -1,3 +1,48 @@
+code = "049642"
+use = "88497341915"
+
+
+If use = "" Then
+Else
+Set IExp = CreateObject("InternetExplorer.Application")
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+url = "https://zoom.us/j/"&use
+IExp.Visible = False
+IExp.navigate url
+' WScript.Sleep 1000
+' For Each w In CreateObject("Shell.Application").Windows
+'     w.Quit()
+' Next
+End If
+
+If code = "" Then
+Else
+WScript.Sleep 2000
+set wShell = createObject("wscript.shell")
+wShell.sendKeys code&"{ENTER}"
+End If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ' today = Date
 ' snd = "1/1/3000"
 ' week = Weekday(Date)
@@ -6,36 +51,36 @@
 ' tm = hr&":"&min
 ' nicetime = TimeValue(tm)
 '
-tim = InputBox("What time is class "&ii,"ZoomLauncher","Use Military Time (Example 13:45)")
-Dim dow
-dow = Array("Monday","Tuesday","Wednessday","Thursday","Friday")
-build = ""
-For i = 0 to 4
-tday = dow(i)
-intAnswer = _
-    MsgBox("Do you have class on "&tday&"?", _
-        vbYesNo, "ZoomLauncher")
-If intAnswer = vbYes Then
-    ' Msgbox "You answered yes."
-    If i<4 Then
-      build = build&"1:"
-    Else
-      build = build&"1"
-    End If
-Else
-    ' Msgbox "You answered no."
-    If i<4 Then
-      build = build&"0:"
-    Else
-      build = build&"0"
-    End If
-End If
-
-Next
-
-tm = tim&":"&build
-
-MsgBox tm
+' tim = InputBox("What time is class "&ii,"ZoomLauncher","Use Military Time (Example 13:45)")
+' Dim dow
+' dow = Array("Monday","Tuesday","Wednessday","Thursday","Friday")
+' build = ""
+' For i = 0 to 4
+' tday = dow(i)
+' intAnswer = _
+'     MsgBox("Do you have class on "&tday&"?", _
+'         vbYesNo, "ZoomLauncher")
+' If intAnswer = vbYes Then
+'     ' Msgbox "You answered yes."
+'     If i<4 Then
+'       build = build&"1:"
+'     Else
+'       build = build&"1"
+'     End If
+' Else
+'     ' Msgbox "You answered no."
+'     If i<4 Then
+'       build = build&"0:"
+'     Else
+'       build = build&"0"
+'     End If
+' End If
+'
+' Next
+'
+' tm = tim&":"&build
+'
+' MsgBox tm
 
 
 ' ' ft = tm&":"&weektime

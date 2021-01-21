@@ -1,4 +1,7 @@
-n = InputBox("How many Zoom classes?","ZoomLauncher","Type Here")
+version = "AutoZoom 0.2.0"
+
+
+n = InputBox("How many Zoom classes?",version,"Type Here")
 
 If n="" Then
   Wscript.Quit
@@ -12,7 +15,7 @@ ii = i+1
 
 
 'Class Code Prompt
-cl = InputBox("Zoom code for Class "&ii,"ZoomLauncher","Type Here")
+cl = InputBox("Zoom code for Class "&ii,version,"Type Here")
 
 If cl="" Then
   Wscript.Quit
@@ -27,7 +30,7 @@ shell.Run "AutoZoom\Replace.vbs " & x & y & z
 
 
 'Time Prompts
-tim = InputBox("What time is class "&ii,"ZoomLauncher","Use Military Time (Example 13:45)")
+tim = InputBox("What time is class "&ii,version,"Use Military Time (Example 13:45)")
 Dim dow
 dow = Array("Monday","Tuesday","Wednessday","Thursday","Friday")
 build = ""
@@ -35,7 +38,7 @@ For o = 0 to 4
 tday = dow(o)
 intAnswer = _
     MsgBox("Do you have class "&ii&" on "&tday&"?", _
-        vbYesNo, "ZoomLauncher")
+        vbYesNo, version)
 If intAnswer = vbYes Then
     ' Msgbox "You answered yes."
     If o<4 Then
@@ -51,8 +54,26 @@ Else
       build = build&"0"
     End If
 End If
-
 Next
+
+inAnswer = _
+    MsgBox("Does class "&ii&" have a passcode?", _
+        vbYesNo, version)
+If inAnswer = vbYes Then
+    ' Msgbox "You answered yes."
+    cod = InputBox("What is the passcode for class "&ii&"?",version,"Type Here")
+
+    Set shell = CreateObject("WScript.Shell")
+    x = "AutoZoom\Vars.txt "
+    y = "code"&i&" "
+    z = cod
+    shell.Run "AutoZoom\Replace.vbs " & x & y & z
+
+Else
+    ' Msgbox "You answered no."
+
+End If
+
 
 tm = tim&":"&build
 
@@ -70,7 +91,7 @@ shell.Run "AutoZoom\Replace.vbs " & x & y & z
 'End of loop
 Next
 
-snd = InputBox("What date does the semester end?","ZoomLauncher","month/day/year")
+snd = InputBox("What date does the semester end?",version,"month/day/year")
 If snd="" Then
   Wscript.Quit
 Else

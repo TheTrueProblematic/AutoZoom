@@ -34,6 +34,8 @@ Dim zooms
 zooms = Array("","","","","","","","","","")
 Dim times
 times = Array("","","","","","","","","","")
+Dim codes
+codes = Array("","","","","","","","","","")
 
 nnd = ""
 Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("AutoZoom\Vars.txt",1)
@@ -84,6 +86,26 @@ do while not objFileToRead.AtEndOfStream
      times(9) = x
      ElseIf c = 20 Then
      nnd = x
+     ElseIf c = 21 Then
+     codes(0) = x
+     ElseIf c = 22 Then
+     codes(1) = x
+     ElseIf c = 23 Then
+     codes(2) = x
+     ElseIf c = 24 Then
+     codes(3) = x
+     ElseIf c = 25 Then
+     codes(4) = x
+     ElseIf c = 26 Then
+     codes(5) = x
+     ElseIf c = 27 Then
+     codes(6) = x
+     ElseIf c = 28 Then
+     codes(7) = x
+     ElseIf c = 29 Then
+     codes(8) = x
+     ElseIf c = 30 Then
+     codes(9) = x
      Else
      End If
 
@@ -101,30 +123,41 @@ End If
 
 
 use = ""
+code = ""
 
 For i = 0 to 15
 wt = weektime(i)
 ft = tm&":"&wt
 
 If times(0) = ft Then
+code = code(0)
 use = zooms(0)
 ElseIf times(1) = ft Then
+code = code(1)
 use = zooms(1)
 ElseIf times(2) = ft Then
+code = code(2)
 use = zooms(2)
 ElseIf times(3) = ft Then
+code = code(3)
 use = zooms(3)
 ElseIf times(4) = ft Then
+code = code(4)
 use = zooms(4)
 ElseIf times(5) = ft Then
+code = code(5)
 use = zooms(5)
 ElseIf times(6) = ft Then
+code = code(6)
 use = zooms(6)
 ElseIf times(7) = ft Then
+code = code(7)
 use = zooms(7)
 ElseIf times(8) = ft Then
+code = code(8)
 use = zooms(8)
 ElseIf times(9) = ft Then
+code = code(9)
 use = zooms(9)
 Else
 End If
@@ -132,20 +165,23 @@ End If
 Next
 
 If use = "" Then
-
 Else
-
 Set IExp = CreateObject("InternetExplorer.Application")
 Set WSHShell = WScript.CreateObject("WScript.Shell")
 url = "https://zoom.us/j/"&use
 IExp.Visible = False
 IExp.navigate url
+' WScript.Sleep 1000
+' For Each w In CreateObject("Shell.Application").Windows
+'     w.Quit()
+' Next
+End If
 
-For Each w In CreateObject("Shell.Application").Windows
-    w.Quit()
-Next
-
-
+If code = "" Then
+Else
+WScript.Sleep 2000
+set wShell = createObject("wscript.shell")
+wShell.sendKeys code&"{ENTER}"
 End If
 
 
