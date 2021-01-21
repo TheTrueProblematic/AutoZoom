@@ -40,26 +40,7 @@ Dim zooms
 zooms = Array("","","","","","","","","","")
 Dim times
 times = Array("","","","","","","","","","")
-' zoom0 = ""
-' zoom1 = ""
-' zoom3 = ""
-' zoom2 = ""
-' zoom4 = ""
-' zoom6 = ""
-' zoom5 = ""
-' zoom7 = ""
-' zoom8 = ""
-' zoom9 = ""
-' time0 = ""
-' time1 = ""
-' time2 = ""
-' time3 = ""
-' time4 = ""
-' time5 = ""
-' time6 = ""
-' time7 = ""
-' time8 = ""
-' time9 = ""
+
 nnd = ""
 Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("AutoZoom\Vars.txt",1)
 Dim strLine
