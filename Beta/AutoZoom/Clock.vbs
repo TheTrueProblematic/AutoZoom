@@ -5,6 +5,7 @@ hr = Hour(Time)
 min = Minute(Time)
 tm = hr&":"&min
 nicetime = TimeValue(tm)
+term = ""
 
 Dim weektime
 
@@ -47,6 +48,15 @@ do while not objFileToRead.AtEndOfStream
      strLine = objFileToRead.ReadLine()
      'Do something with the line
      x = strLine
+     If c = neg Then
+     term = x
+     Else
+     End If
+
+     If term = "false" Then
+     Wscript.Quit
+     Else
+     End If
 
      If c>neg AND c<10 Then
      zooms(c) = x
