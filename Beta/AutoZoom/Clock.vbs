@@ -7,7 +7,13 @@ tm = hr&":"&min
 nicetime = TimeValue(tm)
 term = ""
 
+
+Dim objFSO
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Dim CurrentDirectory
+CurrentDirectory = objFSO.GetAbsolutePathName(".")
 Dim weektime
+
 
 If week = 2 Then
 ' Monday
@@ -158,6 +164,11 @@ wt = weektime(i)
 ft = tm&":"&wt
 
 If endtims(i) = tm Then
+
+Set oShell = CreateObject("WScript.Shell")
+For u = 0 to 9
+    oShell.Run "taskkill /im Zoom.exe",0,True
+Next
 
 Else
 End If

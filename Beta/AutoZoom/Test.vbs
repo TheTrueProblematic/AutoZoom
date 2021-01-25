@@ -12,25 +12,40 @@
 '     Wscript.Quit
 ' End If
 
-use = 1
-Set IExp = CreateObject("InternetExplorer.Application")
-Set WSHShell = WScript.CreateObject("WScript.Shell")
-url = "https://zoom.us/j/"&use
-IExp.Visible = False
-IExp.navigate url
+' use = 1
+' Set IExp = CreateObject("InternetExplorer.Application")
+' Set WSHShell = WScript.CreateObject("WScript.Shell")
+' url = "https://zoom.us/j/"&use
+' IExp.Visible = False
+' IExp.navigate url
+'
+' WScript.Sleep 1000
+'
+' Set objWMIService = GetObject("winmgmts:" _
+'     & "{impersonationLevel=impersonate}!\\.\root\cimv2")
+'
+' Set colProcessList = objWMIService.ExecQuery _
+'     ("Select * from Win32_Process Where Name = 'iexplore.exe'")
+'
+' Set oShell = CreateObject("WScript.Shell")
+' 'For Each objProcess in colProcessList
+' For u = 0 to 9
+'     oShell.Run "taskkill /im iexplore.exe",0,True
+' Next
 
-WScript.Sleep 1000
+Dim objFSO
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Dim CurrentDirectory
+CurrentDirectory = objFSO.GetAbsolutePathName(".")
 
-Set objWMIService = GetObject("winmgmts:" _
-    & "{impersonationLevel=impersonate}!\\.\root\cimv2")
+MsgBox(CurrentDirectory)
 
-Set colProcessList = objWMIService.ExecQuery _
-    ("Select * from Win32_Process Where Name = 'iexplore.exe'")
-
-Set oShell = CreateObject("WScript.Shell")
-For Each objProcess in colProcessList
-    oShell.Run "taskkill /im iexplore.exe", , True
-Next
+' Set oShell = CreateObject("WScript.Shell")
+' ' set wShell = createObject("wscript.shell")
+' For u = 0 to 9
+'     oShell.Run "taskkill /im Zoom.exe",0,True
+'     oShell.sendKeys "{ENTER}"
+' Next
 
 ' IExp.Terminate
 

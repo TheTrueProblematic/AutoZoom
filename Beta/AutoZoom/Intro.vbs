@@ -1,4 +1,11 @@
 version = "AutoZoom 0.2.0"
+
+
+Dim objFSO
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Dim CurrentDirectory
+CurrentDirectory = objFSO.GetAbsolutePathName(".")
+
 iAnswer = _
     MsgBox("Welcome to "&version&"!"&vbCrLf&vbCrLf&"Do you want to settup now?", _
         vbYesNo, version)
