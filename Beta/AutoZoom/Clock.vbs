@@ -48,7 +48,7 @@ Dim endtims
 endtims = Array("","","","","","","","","","")
 
 nnd = ""
-Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("AutoZoom\Vars.txt",1)
+Set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile(CurrentDirectory&"\Vars.txt",1)
 Dim strLine
 do while not objFileToRead.AtEndOfStream
      strLine = objFileToRead.ReadLine()

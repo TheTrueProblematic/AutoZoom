@@ -38,10 +38,10 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "AutoZoom\Vars.txt "
+x = CurrentDirectory&"\Vars.txt "
 y = "zoom"&i&" "
 z = cl
-shell.Run "AutoZoom\Replace.vbs " & x & y & z
+shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 endtim = ""
 ' delay = ""
@@ -58,10 +58,10 @@ If iAnswer = vbYes Then
     endtim = InputBox("What time do you want to disconnect from class "&ii&"?",version,"Use Military Time (Example 13:45)")
 
     Set shell = CreateObject("WScript.Shell")
-    x = "AutoZoom\Vars.txt "
+    x = CurrentDirectory&"\Vars.txt "
     y = "endtim"&i&" "
     z = endtim
-    shell.Run "AutoZoom\Replace.vbs " & x & y & z
+    shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
     ' delay = InputBox("How long after class "&ii&" ends do you want it to disconnect?"&vbCrLf&vbCrLf&"(Enter 0 for no delay)",version,"Enter your answer in minutes")
 Else
     ' Msgbox "You answered no."
@@ -103,10 +103,10 @@ If inAnswer = vbYes Then
     cod = InputBox("What is the passcode for class "&ii&"?",version,"Type Here")
 
     Set shell = CreateObject("WScript.Shell")
-    x = "AutoZoom\Vars.txt "
+    x = CurrentDirectory&"\Vars.txt "
     y = "code"&i&" "
     z = cod
-    shell.Run "AutoZoom\Replace.vbs " & x & y & z
+    shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 Else
     ' Msgbox "You answered no."
@@ -122,10 +122,10 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "AutoZoom\Vars.txt "
+x = CurrentDirectory&"\Vars.txt "
 y = "time"&i&" "
 z = tm
-shell.Run "AutoZoom\Replace.vbs " & x & y & z
+shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 'End of loop
 Next
@@ -137,17 +137,17 @@ Else
 End If
 
 Set shell = CreateObject("WScript.Shell")
-x = "AutoZoom\Vars.txt "
+x = CurrentDirectory&"\Vars.txt "
 y = "end "
 z = snd
-shell.Run "AutoZoom\Replace.vbs " & x & y & z
+shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 Set shell = CreateObject("WScript.Shell")
-x = "AutoZoom\Vars.txt "
+x = CurrentDirectory&"\Vars.txt "
 y = "false "
 z = "true"
-shell.Run "AutoZoom\Replace.vbs " & x & y & z
+shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 Set shell = CreateObject("WScript.Shell")
 'shell.CurrentDirectory = "C:\Users\js\Desktop\createIndex"
-shell.Run "AutoZoom\Config.bat"
+shell.Run CurrentDirectory&"\Config.bat"

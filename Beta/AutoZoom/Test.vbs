@@ -33,12 +33,18 @@
 '     oShell.Run "taskkill /im iexplore.exe",0,True
 ' Next
 
-Dim objFSO
-Set objFSO = CreateObject("Scripting.FileSystemObject")
-Dim CurrentDirectory
-CurrentDirectory = objFSO.GetAbsolutePathName(".")
-
-MsgBox(CurrentDirectory)
+' Dim objFSO
+' Set objFSO = CreateObject("Scripting.FileSystemObject")
+' Dim CurrentDirectory
+' CurrentDirectory = objFSO.GetAbsolutePathName(".")
+'
+' MsgBox(CurrentDirectory)
+'
+' Set shell = CreateObject("WScript.Shell")
+' x = CurrentDirectory&"\Vars.txt "
+' y = "endtim1 "
+' z = "endtim"
+' shell.Run CurrentDirectory&"\Replace.vbs " & x & y & z
 
 ' Set oShell = CreateObject("WScript.Shell")
 ' ' set wShell = createObject("wscript.shell")
